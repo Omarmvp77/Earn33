@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+    .gold-btn {
+      background: linear-gradient(45deg, #FFD700, #FFC107);
+      color: #fff;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    .gold-btn:hover {
+      transform: scale(1.05);
+    }
+    .floating-banner {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      z-index: 9999;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl text-center max-w-md w-full">
+    <!-- العنوان -->
+    <h1 class="text-3xl font-bold text-white mb-3">اكسب فلوس من الشات!</h1>
+    <p class="text-white/90 mb-5 text-lg leading-relaxed">
+      رد على الرسائل، اجمع الماسات، واسحب فلوسك يوميًا بسهولة.
+    </p>
+
+    <!-- كود التفعيل -->
+    <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center mb-6">
+      <span class="text-purple-700 font-bold">كود التفعيل: <span id="promo-code">FYBHK4</span></span>
+      <button onclick="copyCode()" class="gold-btn px-3 py-2 rounded-lg">📋 نسخ</button>
+    </div>
+
+    <!-- زر التحميل -->
+    <a href="https://h5.touchchat.me/social/share/index-club-en.html?lg=ar&code=FYBHK4&gender=2&from=android&source=1&share_userid=146741149925&clone=4" target="_blank" class="gold-btn block w-full py-3 rounded-xl text-lg">
+      ⬇ تحميل التطبيق
+    </a>
+
+    <!-- المميزات -->
+    <ul class="text-white/90 text-right mt-6 space-y-2">
+      <li>✅ 100 رسالة = 100 ماسة</li>
+      <li>✅ 100 ماسة = نصف دولار</li>
+      <li>✅ سحب يومي عبر فودافون كاش أو اي محفظة أو فوري</li>
+      <li>✅ الحد الأدنى للسحب: 0.5$ فقط</li>
+    </ul>
+  </div>
+
+  <!-- بنر التحذير -->
+  <div class="floating-banner">
+    ⚠ الموقع غير مسؤول عن الاستخدام الخاطئ للتطبيق
+  </div>
+
+  <!-- JS -->
+  <script>
+    function copyCode() {
+      const code = document.getElementById("promo-code").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("تم نسخ الكود بنجاح ✅");
+      });
+    }
+  </script>
+
+</body>
+</html>
